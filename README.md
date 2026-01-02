@@ -9,8 +9,6 @@ Result-
 
 (result text)
 
-All Results:
-<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/8058714d-fb20-4d1e-94f7-7ebecbe33dea" />
 
 Entering Data:
 <img width="1919" height="355" alt="image" src="https://github.com/user-attachments/assets/a85db801-55d6-46b3-b55c-b3d1be07bffb" />

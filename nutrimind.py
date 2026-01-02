@@ -133,27 +133,124 @@ def plot_trends():
     data = load_data()
     days = list(range(1, len(data["mood"]) + 1))
 
+    #Mood vs Protein
     plt.figure()
-    plt.plot(days, data["mood"], label="Mood")
-    plt.plot(days, data["protein"], label="Protein")
-    plt.plot(days, data["fiber"], label="Fiber")
+    plt.plot(days, data["protein"], marker='o')
+    plt.plot(days, data["mood"], marker='o')
     plt.xlabel("Days")
     plt.ylabel("Value")
-    plt.title("Mood vs Nutrition Trends")
-    plt.legend()
+    plt.title("Mood vs Protein Intake")
+    plt.legend(["Protein", "Mood"])
     plt.show()
 
+    #Mood vs Carbohydrates
+    plt.figure()
+    plt.plot(days, data["carbs"], marker='o')
+    plt.plot(days, data["mood"], marker='o')
+    plt.xlabel("Days")
+    plt.ylabel("Value")
+    plt.title("Mood vs Carbohydrate Intake")
+    plt.legend(["Carbs", "Mood"])
+    plt.show()
+
+    #Mood vs Fat
+    plt.figure()
+    plt.plot(days, data["fat"], marker='o')
+    plt.plot(days, data["mood"], marker='o')
+    plt.xlabel("Days")
+    plt.ylabel("Value")
+    plt.title("Mood vs Fat Intake")
+    plt.legend(["Fat", "Mood"])
+    plt.show()
+
+    #Mood vs Fiber
+    plt.figure()
+    plt.plot(days, data["fiber"], marker='o')
+    plt.plot(days, data["mood"], marker='o')
+    plt.xlabel("Days")
+    plt.ylabel("Value")
+    plt.title("Mood vs Fiber Intake")
+    plt.legend(["Fiber", "Mood"])
+    plt.show()
+
+    #Mood vs Sleep
+    plt.figure()
+    plt.plot(days, data["sleep"], marker='o')
+    plt.plot(days, data["mood"], marker='o')
+    plt.xlabel("Days")
+    plt.ylabel("Value")
+    plt.title("Mood vs Sleep Hours")
+    plt.legend(["Sleep", "Mood"])
+    plt.show()
+
+    #Mood vs Water
+    plt.figure()
+    plt.plot(days, data["water"], marker='o')
+    plt.plot(days, data["mood"], marker='o')
+    plt.xlabel("Days")
+    plt.ylabel("Value")
+    plt.title("Mood vs Water Intake")
+    plt.legend(["Water", "Mood"])
+    plt.show()
+
+    #Scatter: Protein vs Mood
+    plt.figure()
+    plt.scatter(data["protein"], data["mood"])
+    plt.xlabel("Protein Intake")
+    plt.ylabel("Mood")
+    plt.title("Scatter Plot: Protein vs Mood")
+    plt.show()
+
+    #Scatter: Carbs vs Mood
+    plt.figure()
+    plt.scatter(data["carbs"], data["mood"])
+    plt.xlabel("Carbohydrates")
+    plt.ylabel("Mood")
+    plt.title("Scatter Plot: Carbohydrates vs Mood")
+    plt.show()
+
+    #Scatter: Sleep vs Mood
+    plt.figure()
+    plt.scatter(data["sleep"], data["mood"])
+    plt.xlabel("Sleep Hours")
+    plt.ylabel("Mood")
+    plt.title("Scatter Plot: Sleep vs Mood")
+    plt.show()
+
+    #Correlation Strength Bar Chart
+    labels = []
+    values = []
+
+    for key in data:
+        if key != "mood":
+            r = calculate_correlation(data[key], data["mood"])
+            labels.append(key.capitalize())
+            values.append(r)
+
+    plt.figure()
+    plt.bar(labels, values)
+    plt.xlabel("Factors")
+    plt.ylabel("Correlation Coefficient")
+    plt.title("Correlation Strength of Factors with Mood")
+    plt.show()
+
+
+def display_data_table():
+    with open("nutrimind_data.csv", "r") as file:
+        print("\n--- Raw Data Table ---\n")
+        print(file.read())
 
 
 def main():
     initialize_file()
 
     while True:
-        print("\n==== NutriMind Menu ====")
+        print("\n==== Mood–Nutrition Correlation System ====")
         print("1. Log daily entry")
         print("2. Analyze correlations")
-        print("3. Plot trends")
-        print("4. Exit")
+        print("3. Generate graphs")
+        print("4. Display raw data table")
+        print("5. Exit")
 
         choice = input("Enter choice: ")
 
@@ -164,7 +261,9 @@ def main():
         elif choice == "3":
             plot_trends()
         elif choice == "4":
-            print("Exiting NutriMind.")
+            display_data_table()
+        elif choice == "5":
+            print("Program terminated.")
             break
         else:
             print("Invalid choice.")

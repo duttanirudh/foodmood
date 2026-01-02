@@ -13,11 +13,13 @@ All Results:
 <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/8058714d-fb20-4d1e-94f7-7ebecbe33dea" />
 
 Entering Data:
-<img width="1919" height="346" alt="image" src="https://github.com/user-attachments/assets/97d77479-f365-4722-97d8-e448b1f00583" />
+<img width="1919" height="355" alt="image" src="https://github.com/user-attachments/assets/a85db801-55d6-46b3-b55c-b3d1be07bffb" />
+
 
 
 Analyzing Correlations:
-<img width="1919" height="346" alt="image" src="https://github.com/user-attachments/assets/5f40ea7c-9986-44f3-a8fd-f0debc5ffc92" />
+<img width="1919" height="350" alt="image" src="https://github.com/user-attachments/assets/3039359c-4795-4459-9257-18b6cd75458f" />
+
 
 Plotting Trends
 <img width="1919" height="177" alt="image" src="https://github.com/user-attachments/assets/123405a5-0b48-4c96-97d0-d8b3328b9f91" />
@@ -52,4 +54,4 @@ coorelation strength of factors vs mood
 <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/24ffbe96-6fdb-4b34-877b-843cef3d0a9d" />
 
 display raw data:
-<img width="738" height="475" alt="image" src="https://github.com/user-attachments/assets/2b5fbbd9-39de-4b43-a755-e75db37c2f1a" />
+<img width="1919" height="465" alt="image" src="https://github.com/user-attachments/assets/5b1259d8-5098-408c-8d8e-7d1d3b940339" />
